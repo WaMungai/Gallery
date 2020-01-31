@@ -1,4 +1,5 @@
 {% load bootstrap3 %}
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,6 +17,7 @@
 
 </head>
 <body>
+    {% include "navbar.html" %}
     {%block content %}
     <h1 class="display-4">Lens Queen</h1>
     <p>Change your lens, change your story</p>
