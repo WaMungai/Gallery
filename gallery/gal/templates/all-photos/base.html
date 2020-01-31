@@ -10,12 +10,21 @@
     <title>Piga Picha</title>
     {% endif %}
 
+    {% block styles %}
+        {% bootstrap_css %}
+    {% end block %}
+
 </head>
 <body>
     {%block content %}
     <h1 class="display-4">Lens Queen</h1>
     <p>Change your lens, change your story</p>
     {% end block %}
+
+    {% block scripts %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        {% bootstrap_javasacript %}
+    {% endblock %}
 
     
 </body>
