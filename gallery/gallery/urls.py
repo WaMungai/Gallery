@@ -23,4 +23,5 @@ urlpatterns = [
     url('^$', views.welcome,name='welcome'),
     url(r'^singlephoto/(\d+)',views.singlephoto,name='singlephoto'),
     url(r'^search/' views.search_category,name='search_category'),
+    url()
 ]
