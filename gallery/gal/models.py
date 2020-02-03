@@ -41,5 +41,20 @@ class Image(models.Model):
     
     def save_image(self):
         self.save()
+        
+    @classmethod
+    def display_photos(cls):
+        photos=cls.objects.all()
+        return photos
+    
+    @classmethod
+    def delete_photo(cls,id):
+        photo=cls.object.filter(id=id).delete()
+        
+    @classmethod
+    def update_photo(cls,id):
+        
+        
+    
     
     
