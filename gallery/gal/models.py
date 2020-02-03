@@ -54,6 +54,11 @@ class Image(models.Model):
     @classmethod
     def update_photo(cls,id):
         
+    @classmethod
+    def search_by_category(cls,search_term):
+        photos = cls.objects.filter(category__category_name__icontains=search_term)
+        return photos
+        
         
     
     
