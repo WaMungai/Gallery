@@ -21,7 +21,8 @@ class Category(models.Model):
          
      @classmethod
      def update_category(cls,id):
-        category=cls.object.filter(id=id).update(**request.data)    
+        category=cls.object.filter(id=id).update(**request.data) 
+           
 class Location(models.Model):
     location_name=models.CharField(max_length=30)
     
@@ -34,6 +35,14 @@ class Location(models.Model):
     def get_location(self):
         return Location.select().where(Location.location_name==self)
 
+    @classmethod
+    def delete_location(cls,id):
+        location=cls.object.filter(id=id).delete()
+        
+    @classmethod
+    def update_location(cls,id):
+        location=cls.object.filter(id=id).update(**request.data)
+        
 class Image(models.Model):
     photo_image=models.ImageField(upload_to='images/')
     image_name=models.CharField(max_length=30)
