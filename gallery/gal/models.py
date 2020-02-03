@@ -15,13 +15,13 @@ class Category(models.Model):
     def get_category(self):
         return Category.select().where(Category.category_name==self)
      
-     @classmethod
-     def delete_category(cls,id):
-         category=cls.object.filter(id=id).delete()
-         
-     @classmethod
-     def update_category(cls,id):
-        category=cls.object.filter(id=id).update(**request.data) 
+    @classmethod
+    def delete_category(cls,id):
+        category=cls.object.filter(id=id).delete()
+        
+    @classmethod
+    def update_category(cls,id):
+       category=cls.object.filter(id=id).update(**request.data) 
            
 class Location(models.Model):
     location_name=models.CharField(max_length=30)
@@ -68,13 +68,14 @@ class Image(models.Model):
         
     @classmethod
     def update_photo(cls,id):
+        photo=cls.object.filter(id=id).update(**request.data)
         
     @classmethod
     def search_by_category(cls,search_term):
         photos = cls.objects.filter(category__category_name__icontains=search_term)
         return photos
     
-      @classmethod
+    @classmethod
     def filter_by_category(cls,search_term):
         photos = cls.objects.filter(location__location_name__icontains=search_term)
         return photos
