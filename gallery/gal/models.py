@@ -15,7 +15,13 @@ class Category(models.Model):
     def get_category(self):
         return Category.select().where(Category.category_name==self)
      
-    
+     @classmethod
+     def delete_category(cls,id):
+         category=cls.object.filter(id=id).delete()
+         
+     @classmethod
+     def update_category(cls,id):
+        category=cls.object.filter(id=id).update(**request.data)    
 class Location(models.Model):
     location_name=models.CharField(max_length=30)
     
